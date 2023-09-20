@@ -20,6 +20,7 @@ PKG_MAINTAINER:=Tianling Shen <cnsztl@immortalwrt.org>
 PKG_BUILD_DEPENDS:=golang/host
 PKG_BUILD_PARALLEL:=1
 PKG_USE_MIPS16:=0
+PKG_BUILD_FLAGS:=no-mips16
 
 GO_PKG:=github.com/apernet/hysteria
 GO_PKG_BUILD_PKG:=$(GO_PKG)/app
@@ -30,7 +31,7 @@ GO_PKG_LDFLAGS_X = \
 	$(GO_PKG)/app/cmd.appArch=$(GO_ARCH)
 
 include $(INCLUDE_DIR)/package.mk
-include $(TOPDIR)/feeds/packages/lang/golang/golang-package.mk
+include $(TOPDIR)/feeds/helloworld/golang/golang-package.mk
 
 define Package/hysteria
   SECTION:=net
