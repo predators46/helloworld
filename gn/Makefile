@@ -18,7 +18,7 @@ PKG_LICENSE_FILES:=LICENSE
 PKG_MAINTAINER:=Tianling Shen <cnsztl@immortalwrt.org>
 
 ifneq ($(wildcard $(TOPDIR)/feeds/packages/devel/ninja/ninja.mk),)
-PKG_BUILD_DEPENDS+= ninja/host
+HOST_BUILD_DEPENDS:= ninja/host
 endif
 PKG_HOST_ONLY:=1
 HOST_BUILD_PARALLEL:=1
