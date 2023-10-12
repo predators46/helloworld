@@ -124,6 +124,7 @@ jobs:
           echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ChinaDNS_NG=n" >> .config
           echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Hysteria=n" >> .config
           echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Tuic-Client=n" >> .config
+          echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadow-TLS=n" >> .config
           echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_IPT2Socks=n" >> .config
           echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Kcptun=n" >> .config
           echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_NaiveProxy=n" >> .config
@@ -264,6 +265,7 @@ jobs:
           echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ChinaDNS_NG=y" >> .config
           echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Hysteria=y" >> .config
           echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Tuic-Client=y" >> .config
+          echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadow-TLS=y" >> .config
           echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_IPT2Socks=y" >> .config
           echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Kcptun=y" >> .config
           echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_NaiveProxy=y" >> .config
