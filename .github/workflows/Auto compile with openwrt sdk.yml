@@ -13,7 +13,7 @@ on:
         default: 'false'
   push:
     branches:
-      - 'master'
+      - 'main'
     paths:
       - 'luci-app-ssr-plus/Makefile'
 env:
@@ -33,7 +33,7 @@ jobs:
         uses: actions/checkout@main
         with:
           fetch-depth: 0
-          ref: 'master'
+          ref: 'main'
 
       - name: Check version
         id: check_version
@@ -100,7 +100,7 @@ jobs:
           file_name=$(echo ${{env.url_sdk}} | awk -F/ '{print $NF}')
           mkdir sdk && tar -xJf $file_name -C ./sdk --strip-components=1
           cd sdk
-          echo "src-git helloworld https://github.com/${{ env.helloworld }}.git;master" >> feeds.conf.default
+          echo "src-git helloworld https://github.com/${{ env.helloworld }}.git;main" >> feeds.conf.default
           ./scripts/feeds update -a
           echo "CONFIG_PACKAGE_luci-app-ssr-plus=m" > .config
           ./scripts/feeds install -d n luci-app-ssr-plus
@@ -120,6 +120,7 @@ jobs:
           echo "CONFIG_PACKAGE_luci-app-ssr-plus=m" >> .config
           echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_NONE_V2RAY=y" >> .config
           echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ChinaDNS_NG=n" >> .config
+          echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_MosDNS=n" >> .config
           echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Hysteria=n" >> .config
           echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Tuic_Client=n" >> .config
           echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadow_TLS=n" >> .config
@@ -242,7 +243,7 @@ jobs:
       - name: ${{ matrix.platform }} feeds configuration packages
         run: |
           cd sdk
-          echo "src-git helloworld https://github.com/${{ env.helloworld }}.git;master" >> feeds.conf.default
+          echo "src-git helloworld https://github.com/${{ env.helloworld }}.git;main" >> feeds.conf.default
 
           ./scripts/feeds update -a
           ./scripts/feeds install -a -f -p helloworld
@@ -256,6 +257,7 @@ jobs:
           echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=y" >> .config
           echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Xray=y" >> .config
           echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ChinaDNS_NG=y" >> .config
+          echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_MosDNS=y" >> .config
           echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Hysteria=y" >> .config
           echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Tuic_Client=y" >> .config
           echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadow_TLS=y" >> .config
