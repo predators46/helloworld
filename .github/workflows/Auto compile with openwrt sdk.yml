@@ -266,9 +266,9 @@ jobs:
           echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_NaiveProxy=y" >> .config
           echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Redsocks2=y" >> .config
           echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Libev_Client=y" >> .config
-          echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Rust_Client=y" >> .config
+          echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Rust_Client=n" >> .config
           echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Libev_Server=y" >> .config
-          echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Rust_Server=y" >> .config
+          echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Rust_Server=n" >> .config
           echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Simple_Obfs=y" >> .config
           echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_V2ray_Plugin=y" >> .config
           echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Libev_Client=y" >> .config
