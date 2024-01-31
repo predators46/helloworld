@@ -17,6 +17,7 @@ PKG_LICENSE:=BSD 3-Clause
 PKG_LICENSE_FILES:=LICENSE
 PKG_MAINTAINER:=Tianling Shen <cnsztl@immortalwrt.org>
 
+HOST_BUILD_DEPENDS:=ninja/host
 PKG_HOST_ONLY:=1
 HOST_BUILD_PARALLEL:=1
 
@@ -42,7 +43,7 @@ define Host/Configure
 endef
 
 define Host/Compile
-	+$(NINJA) -C $(HOST_BUILD_DIR)/out
+	ninja -C $(HOST_BUILD_DIR)/out
 endef
 
 define Host/Install
