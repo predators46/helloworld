@@ -95,15 +95,13 @@ jobs:
           mkdir sdk && tar -xJf $file_name -C ./sdk --strip-components=1
           cd sdk
           echo "src-git helloworld https://github.com/${{ env.helloworld }}.git;master" >> feeds.conf.default
-          ./scripts/feeds update -a
-          echo "CONFIG_PACKAGE_luci-app-ssr-plus=m" > .config
-          ./scripts/feeds install -d n luci-app-ssr-plus
           make download -j8
 
       - name: Configure helloworld
         run: |
           cd sdk
-          ./scripts/feeds update helloworld
+          ./scripts/feeds update -a
+          ./scripts/feeds install -a -f -p helloworld
           ./scripts/feeds install luci-app-ssr-plus
           echo "CONFIG_ALL_NONSHARED=n" > .config
           echo "CONFIG_ALL_KMODS=n" >> .config
