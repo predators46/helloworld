@@ -67,19 +67,19 @@ LUCI_DEPENDS:= \
 define Package/$(PKG_NAME)/config
 select PACKAGE_luci-lib-ipkg if PACKAGE_$(PKG_NAME)
 
-#choice
-#	prompt "Uclient SSL Lib Selection"
-#	default PACKAGE_$(PKG_NAME)_INCLUDE_libustream-openssl
-#	
-#	config PACKAGE_$(PKG_NAME)_INCLUDE_libustream-mbedtls
-#	bool "libustream-mbedtls"
-#
-#	config PACKAGE_$(PKG_NAME)_INCLUDE_libustream-openssl
-#	bool "libustream-openssl"
-#
-#	config PACKAGE_$(PKG_NAME)_INCLUDE_PACKAGE_libustream-wolfssl
-#	bool "libustream-wolfssl"
-#endchoice
+choice
+	prompt "Uclient SSL Lib Selection"
+	default PACKAGE_$(PKG_NAME)_INCLUDE_libustream-openssl
+	
+	config PACKAGE_$(PKG_NAME)_INCLUDE_libustream-mbedtls
+	bool "libustream-mbedtls"
+
+	config PACKAGE_$(PKG_NAME)_INCLUDE_libustream-openssl
+	bool "libustream-openssl"
+
+	config PACKAGE_$(PKG_NAME)_INCLUDE_PACKAGE_libustream-wolfssl
+	bool "libustream-wolfssl"
+endchoice
 
 choice
 	prompt "Shadowsocks Client Selection"
