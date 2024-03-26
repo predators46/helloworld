@@ -96,6 +96,9 @@ jobs:
           cd sdk
           echo "src-git helloworld https://github.com/${{ env.helloworld }}.git;master" >> feeds.conf.default
           ./scripts/feeds update -a
+          ./scripts/feeds install -a -f -p helloworld
+          ./scripts/feeds install luci-app-ssr-plus
+          
           echo "CONFIG_ALL_NONSHARED=n" > .config
           echo "CONFIG_ALL_KMODS=n" >> .config
           echo "CONFIG_ALL=n" >> .config
@@ -120,7 +123,7 @@ jobs:
           echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Libev_Client=n" >> .config
           echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Libev_Server=n" >> .config
           echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Trojan=n" >> .config
-          ./scripts/feeds install -d n luci-app-ssr-plus
+          make defconfig
           make download -j8
 
       - name: Configure helloworld
