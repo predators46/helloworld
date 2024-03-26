@@ -113,9 +113,9 @@ jobs:
 
           echo "CONFIG_PACKAGE_luci-app-ssr-plus=m" >> .config
           echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_libustream-openssl=y" >> .config
-          #echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_NONE_Client=y" >> .config
-          #echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_NONE_Server=y" >> .config
-          #echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_NONE_V2RAY=y" >> .config
+          echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_NONE_Client=y" >> .config
+          echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_NONE_Server=y" >> .config
+          echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_NONE_V2RAY=y" >> .config
           echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ChinaDNS_NG=n" >> .config
           echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_MosDNS=n" >> .config
           echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Hysteria=n" >> .config
