@@ -34,7 +34,7 @@ LUCI_PKGARCH:=all
 LUCI_DEPENDS:= \
 	+coreutils +coreutils-base64 +dns2socks +dns2tcp +dnsmasq-full +@PACKAGE_dnsmasq_full_ipset +ipset +kmod-ipt-nat \
 	+ip-full +iptables +iptables-mod-tproxy +lua +lua-neturl +libuci-lua +microsocks \
-	+tcping +resolveip +shadowsocksr-libev-ssr-check +uclient-fetch \
+	+tcping +resolveip +uclient-fetch \
 	+PACKAGE_$(PKG_NAME)_INCLUDE_libustream-mbedtls:libustream-mbedtls \
 	+PACKAGE_$(PKG_NAME)_INCLUDE_libustream-openssl:libustream-openssl \
 	+PACKAGE_$(PKG_NAME)_INCLUDE_libustream-wolfssl:libustream-wolfssl \
