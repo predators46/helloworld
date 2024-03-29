@@ -106,7 +106,8 @@ jobs:
           echo "CONFIG_LUCI_LANG_zh_Hans=y" >> .config
 
           echo "CONFIG_PACKAGE_luci-app-ssr-plus=m" >> .config
-          #echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_libustream-openssl=y" >> .config
+          echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_libustream-mbedtls=n" >> .config
+          echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_libustream-wolfssl=n" >> .config
           echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_NONE_V2RAY=y" >> .config
           echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ChinaDNS_NG=n" >> .config
           echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_MosDNS=n" >> .config
