@@ -19,7 +19,7 @@ on:
 env:
   TZ: Asia/Makassar
   helloworld: ${{ github.repository }}
-  packages: esaaprillia/helloworld
+  packages: predators46/helloworld
 
 jobs:
   job_check:
